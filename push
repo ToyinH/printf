@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Enter your commit message:"
+read commit_message
+
+# Add all files to the staging area
+git add *.c
+
+# Commit with the custom message
+git commit -m "$commit_message"
+
+# Push to the currently set branch
+git push
