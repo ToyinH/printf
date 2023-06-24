@@ -6,7 +6,7 @@
 int _printf(const char *format, ...);
 int put_char(char a);
 int put_str(char *str);
-void put_d(int num);
+int put_d(int num);
 int specifier_func(char ch, va_list args);
 
 #endif
