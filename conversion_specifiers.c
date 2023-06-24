@@ -27,6 +27,10 @@ int specifier_func(char ch, va_list args)
 			put_char('%');
 			print_count++;
 			break;
+		case 'd':
+			lent = put_d(va_arg(args, int));
+			print_count += lent;
+			break;
 		default:
 			put_char(ch);
 			print_count++;
