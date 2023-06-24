@@ -2,7 +2,7 @@
 
 /**
  * put_d - prints numbers
- * @num: an argument 
+ * @num: an argument
  *
  * Return: the number of times written
  */
@@ -12,7 +12,7 @@ int put_d(int num)
 	int counter = 0;
 	int new_num;
 	int ascii;
-	
+
 	if (num < 0)
 	{
 		put_char('-');
@@ -24,7 +24,7 @@ int put_d(int num)
 	new_num = num / 10;
 	ascii = (num % 10) + 48;
 	counter = put_d(new_num);
-	
+
 	put_char(ascii);
 
 	return (counter + 1);

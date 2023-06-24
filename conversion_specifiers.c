@@ -12,7 +12,7 @@ int specifier_func(char ch, va_list args)
 	int print_count = 0;
 	int lent;
 
-	switch(ch)
+	switch (ch)
 	{
 		case 'c':
 			put_char(va_arg(args, int));
