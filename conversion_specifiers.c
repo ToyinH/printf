@@ -1,15 +1,16 @@
 #include "main.h"
 /**
+ * specifier_func - function that defines specifier
+ * @ch: character to check if it were a specifier
+ * @args: va_list
  *
- *
+ * Return: return number of character printed
  */
 
-int specifier_func(char ch, va_list args, const char *format, ...)
+int specifier_func(char ch, va_list args)
 {
 	int print_count = 0;
-	int len;
-
-	va_start(args, format);
+	int lent;
 
 	switch(ch)
 	{
@@ -18,9 +19,9 @@ int specifier_func(char ch, va_list args, const char *format, ...)
 			print_count++;
 			break;
 		case 's':
-			len = put_str(va_arg(args, char *));
+			lent = put_str(va_arg(args, char *));
 
-			print_count += len;
+			print_count += lent;
 			break;
 		case '%':
 			put_char('%');
@@ -31,6 +32,5 @@ int specifier_func(char ch, va_list args, const char *format, ...)
 			print_count++;
 			break;
 	}
-	va_end(args);
 	return (print_count);
 }
