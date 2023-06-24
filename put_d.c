@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * put_d - prints numbers
+ * @num: an argument 
+ *
+ * Return: the number of times written
+ */
+
 int put_d(int num)
 {
 	int counter = 0;
