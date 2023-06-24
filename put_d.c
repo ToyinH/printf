@@ -26,8 +26,9 @@ int put_d(int num)
 		return (counter);
 	}
 	new_num = num / 10;
+	if (new_num != 0)
+		counter = put_d(new_num);
 	ascii = (num % 10) + 48;
-	counter = put_d(new_num);
 
 	put_char(ascii);
 
