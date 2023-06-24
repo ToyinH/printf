@@ -20,7 +20,11 @@ int put_d(int num)
 		counter++;
 	}
 	if (num == 0)
+	{
+		put_char('0');
+		counter++;
 		return (counter);
+	}
 	new_num = num / 10;
 	ascii = (num % 10) + 48;
 	counter = put_d(new_num);
