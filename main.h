@@ -1,8 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#include <unistd.h>
 
 int _printf(const char *format, ...);
-int _putchar(char a);
+int put_char(char a);
+int put_str(char *str);
+int specifier_funcsss(char ch, va_list args);
+int specifier_func(char ch, va_list args, const char *format, ...);
 
 #endif
