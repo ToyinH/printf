@@ -5,7 +5,13 @@ int put_d(int num)
 	int counter = 0;
 	int new_num;
 	int ascii;
-
+	
+	if (num < 0)
+	{
+		put_char('-');
+		num = -(num);
+		counter++;
+	}
 	if (num == 0)
 		return (counter);
 	new_num = num / 10;
