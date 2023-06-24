@@ -3,7 +3,7 @@
  * _putchar - function to print a character to stdout
  * @a: the character to print
  *
- * Return: return 
+ * Return: return
  */
 int _putchar(char a)
 {
