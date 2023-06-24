@@ -6,7 +6,6 @@
 int _printf(const char *format, ...);
 int put_char(char a);
 int put_str(char *str);
-int specifier_funcsss(char ch, va_list args);
-int specifier_func(char ch, va_list args, const char *format, ...);
+int specifier_func(char ch, va_list args);
 
 #endif
