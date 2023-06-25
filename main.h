@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <unistd.h>
+#define BUFFER_SIZE 1024
 
 int _printf(const char *format, ...);
 int put_char(char a);
