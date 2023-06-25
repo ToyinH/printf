@@ -9,5 +9,6 @@ int put_str(char *str);
 int put_d(int num);
 int put_i(int num);
 int specifier_func(char ch, va_list args);
+int int_to_binary(unsigned int n);
 
 #endif
