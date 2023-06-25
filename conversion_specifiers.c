@@ -10,7 +10,7 @@
 int specifier_func(char ch, va_list args)
 {
 	int print_count = 0;
-	int lent, lent1, lent2;
+	int lent, lent1, lent2, lent3;
 
 	switch (ch)
 	{
@@ -34,6 +34,10 @@ int specifier_func(char ch, va_list args)
 		case 'i':
 			lent2 = put_i(va_arg(args, int));
 			print_count += lent2;
+			break;
+		case 'b':
+			lent3 = int_to_binary(va_arg(args, int));
+			print_count += lent3;
 			break;
 		default:
 			put_char(ch);
