@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	int print_counts = 0;
+	int print_counts1 = 0;
 	va_list list;
 
 	va_start(list, format);
@@ -21,7 +22,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%')
 			{
 				i++;
-				print_counts = specifier_func(format[i], list);
+				print_counts1 = specifier_func(format[i], list);
 			}
 			else
 			{
@@ -32,5 +33,5 @@ int _printf(const char *format, ...)
 		}
 		va_end(list);
 	}
-	return (print_counts);
+	return (print_counts + print_counts1);
 }
