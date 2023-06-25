@@ -10,7 +10,7 @@
 int specifier_func(char ch, va_list args)
 {
 	int print_count = 0;
-	int lent;
+	int lent, lent1, lent2;
 
 	switch (ch)
 	{
@@ -28,12 +28,12 @@ int specifier_func(char ch, va_list args)
 			print_count++;
 			break;
 		case 'd':
-			lent = put_d(va_arg(args, int));
-			print_count += lent;
+			lent1 = put_d(va_arg(args, int));
+			print_count += lent1;
 			break;
 		case 'i':
-			lent = put_i(va_arg(args, int));
-			print_count += lent;
+			lent2 = put_i(va_arg(args, int));
+			print_count += lent2;
 			break;
 		default:
 			put_char(ch);
