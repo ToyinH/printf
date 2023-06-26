@@ -15,7 +15,12 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
-	if (format)
+	if (format == NULL)
+	{
+		return (0);
+	}
+
+	else
 	{
 		while (format[i] != '\0')
 		{

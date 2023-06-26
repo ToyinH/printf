@@ -12,7 +12,11 @@ int put_str(char *str)
 	int r_val = 0;
 	int i = 0;
 
-	if (str)
+	if (str == NULL)
+	{
+		return (0);
+	}
+	else
 	{
 		while (str[i] != '\0')
 		{
