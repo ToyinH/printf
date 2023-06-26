@@ -53,7 +53,7 @@ int specifier_func(char ch, va_list args)
 			break;
 		case 'X':
 			lent7 = hexUpper(va_arg(args, long int));
-			print_count = lent6;
+			print_count = lent7;
 			break;
 		default:
 			put_char(ch);

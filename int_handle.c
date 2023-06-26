@@ -52,7 +52,7 @@ int hexLow(long int num)
 
 int hexUpper(long int num)
 {
-	int counter;
+	int counter = 0;
 	long int n, hex;
 
 	if (num < 0)
