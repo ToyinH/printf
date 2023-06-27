@@ -12,7 +12,7 @@ int put_d(int num)
 	int counter = 0;
 	unsigned int abs;
 	int ascii;
-	
+
 	if (num == 0)
 	{
 		put_char('0');
@@ -25,14 +25,7 @@ int put_d(int num)
 		counter++;
 		num = abs = num * -1;
 	}
-	/*
-	if (num == 0)
-	{
-		put_char('0');
-		counter++;
-		return (counter);
-	}
-	*/
+	
 	if (num == INT_MIN)
 	{
 		counter += put_d(abs / 10);
@@ -47,6 +40,6 @@ int put_d(int num)
 	ascii = (num % 10) + 48;
 
 	put_char(ascii);
-
+	
 	return (counter + 1);
 }
