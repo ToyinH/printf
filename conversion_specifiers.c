@@ -11,6 +11,7 @@ int specifier_func(char ch, va_list args)
 {
 	int print_count = 0;
 	int lent, lent1, lent2, lent3, lent4, lent5, lent6, lent7;
+	char *str;
 
 	switch (ch)
 	{
@@ -19,8 +20,10 @@ int specifier_func(char ch, va_list args)
 			print_count++;
 			break;
 		case 's':
-			lent = put_str(va_arg(args, char *));
-
+			str = (va_arg(args, char *));
+			if (str == NULL)
+				str = "(null)";
+			lent = put_str(str);
 			print_count += lent;
 			break;
 		case '%':
