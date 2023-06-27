@@ -43,7 +43,7 @@ int specifier_func(char ch, va_list args)
 			print_count += lent;
 			break;
 		case 'o':
-			lent = octalPrint(va_arg(args, int));
+			lent = octalPrint(va_arg(args, unsigned int));
 			print_count += lent;
 			break;
 		case 'u':
@@ -51,11 +51,11 @@ int specifier_func(char ch, va_list args)
 			print_count += lent;
 			break;
 		case 'x':
-			lent = hexLow(va_arg(args, long int));
+			lent = hexLow(va_arg(args, unsigned int));
 			print_count += lent;
 			break;
 		case 'X':
-			lent = hexUpper(va_arg(args, long int));
+			lent = hexUpper(va_arg(args, unsigned int));
 			print_count += lent;
 			break;
 		case 'p':
