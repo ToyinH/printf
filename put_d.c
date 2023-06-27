@@ -10,9 +10,9 @@
 int put_d(int num)
 {
 	int counter = 0;
-	int new_num;
+	unsigned int abs;
 	int ascii;
-	unsigned int n;
+	
 	if (num == 0)
 	{
 		put_char('0');
@@ -23,19 +23,27 @@ int put_d(int num)
 	{
 		put_char('-');
 		counter++;
-		n = (unsigned int)-num;
+		num = abs = num * -1;
 	}
+	/*
+	if (num == 0)
+	{
+		put_char('0');
+		counter++;
+		return (counter);
+	}
+	*/
 	if (num == INT_MIN)
 	{
-		counter += put_d(n / 10);
-		put_char((n % 10) + '0');
+		counter += put_d(abs / 10);
+		put_char((abs % 10) + '0');
 		counter++;
 		return (counter);
 	
 	}
-	new_num = num / 10;
-	if (new_num != 0)
-		counter = put_d(new_num);
+	
+	if (num / 10)
+		counter += put_d(num / 10);
 	ascii = (num % 10) + 48;
 
 	put_char(ascii);
