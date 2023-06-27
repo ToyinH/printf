@@ -11,6 +11,7 @@ int specifier_func(char ch, va_list args)
 	int print_count = 0;
 	int lent;
 	char *str;
+	long int *ptr;
 
 	switch (ch)
 	{
@@ -51,11 +52,18 @@ int specifier_func(char ch, va_list args)
 			break;
 		case 'x':
 			lent = hexLow(va_arg(args, long int));
-			print_count = lent;
+			print_count += lent;
 			break;
 		case 'X':
 			lent = hexUpper(va_arg(args, long int));
-			print_count = lent;
+			print_count += lent;
+			break;
+		case 'p':
+			ptr = (long int *)(va_arg(args, void *));
+			put_char('0');
+			put_char('x');
+			lent = hexLow((long int)ptr);
+			print_count += lent + 2;
 			break;
 		default:
 			put_char(ch);
