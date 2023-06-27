@@ -10,9 +10,9 @@ int put_str(char *str);
 int put_d(int num);
 int put_i(int num);
 int extInt(unsigned int num);
-int hexUpper(long int num);
-int hexLow(long int num);
-int octalPrint(int a);
+int hexUpper(unsigned int num);
+int hexLow(unsigned int num);
+int octalPrint(unsigned int a);
 int specifier_func(char ch, va_list args);
 int int_to_binary(unsigned int n);
 

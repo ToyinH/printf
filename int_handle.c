@@ -1,6 +1,13 @@
 #include "main.h"
 
-int octalPrint(int a)
+/*
+ * octalPrint - function to print decimal as octal
+ * @a: number to convert
+ *
+ * Return: count
+ */
+
+int octalPrint(unsigned int a)
 {
 	int count = 0;
 	int num;
@@ -15,26 +22,25 @@ int octalPrint(int a)
 	}
 
 	num = a / 8;
-	if (num != 0)
+	if (num !=  0)
 		count = octalPrint(num);
 	octal = a % 8 + 48;
 	put_char(octal);
 
 	return (count + 1);
 }
+/**
+ * hexLow - prints in lowercase hex
+ * @num: num to convert to hex
+ *
+ * Return: counter
+ */
 
-int hexLow(long int num)
+int hexLow(unsigned int num)
 {
 	int counter = 0;
-	long int n;
-	long int hex;
-
-	if (num < 0)
-	{
-		put_char('-');
-		counter++;
-		num = -(num);
-	}
+	unsigned int n;
+	int hex;
 
 	n = num / 16;
 	if (n != 0)
@@ -50,17 +56,18 @@ int hexLow(long int num)
 	return (counter);
 }
 
-int hexUpper(long int num)
+/**
+ * hexUpper - prints in uppercase hex.
+ * @num: numer to convert to hex
+ *
+ * Return: counter
+ */
+
+int hexUpper(unsigned int num)
 {
 	int counter = 0;
-	long int n, hex;
+	unsigned int n, hex;
 
-	if (num < 0)
-	{
-		put_char('-');
-		counter++;
-		num = -num;
-	}
 	n = num / 16;
 	if (n != 0)
 		counter += hexUpper(n);
@@ -74,6 +81,13 @@ int hexUpper(long int num)
 	counter++;
 	return (counter);
 }
+
+/**
+ * extInt- handles the %o specifier
+ * @num: argument to convert
+ *
+ * Return: count
+ */
 
 int extInt(unsigned int num)
 {
