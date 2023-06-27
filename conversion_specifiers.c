@@ -3,14 +3,13 @@
  * specifier_func - function that defines specifier
  * @ch: character to check if it were a specifier
  * @args: va_list
- *
  * Return: return number of character printed
  */
 
 int specifier_func(char ch, va_list args)
 {
 	int print_count = 0;
-	int lent, lent1, lent2, lent3, lent4, lent5, lent6, lent7;
+	int lent;
 	char *str;
 
 	switch (ch)
@@ -31,32 +30,32 @@ int specifier_func(char ch, va_list args)
 			print_count++;
 			break;
 		case 'd':
-			lent1 = put_d(va_arg(args, int));
-			print_count += lent1;
+			lent = put_d(va_arg(args, int));
+			print_count += lent;
 			break;
 		case 'i':
-			lent2 = put_i(va_arg(args, int));
-			print_count += lent2;
+			lent = put_i(va_arg(args, int));
+			print_count += lent;
 			break;
 		case 'b':
-			lent3 = int_to_binary(va_arg(args, int));
-			print_count += lent3;
+			lent = int_to_binary(va_arg(args, int));
+			print_count += lent;
 			break;
 		case 'o':
-			lent4 = octalPrint(va_arg(args, int));
-			print_count += lent4;
+			lent = octalPrint(va_arg(args, int));
+			print_count += lent;
 			break;
 		case 'u':
-			lent5 = extInt(va_arg(args, unsigned int));
-			print_count += lent5;
+			lent = extInt(va_arg(args, unsigned int));
+			print_count += lent;
 			break;
 		case 'x':
-			lent6 = hexLow(va_arg(args, long int));
-			print_count = lent6;
+			lent = hexLow(va_arg(args, long int));
+			print_count = lent;
 			break;
 		case 'X':
-			lent7 = hexUpper(va_arg(args, long int));
-			print_count = lent7;
+			lent = hexUpper(va_arg(args, long int));
+			print_count = lent;
 			break;
 		default:
 			put_char(ch);
