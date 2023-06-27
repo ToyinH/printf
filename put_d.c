@@ -12,24 +12,26 @@ int put_d(int num)
 	int counter = 0;
 	int new_num;
 	int ascii;
-
-	if (num < 0)
-	{
-		put_char('-');
-		num = -(num);
-		counter++;
-	}
+	unsigned int n;
 	if (num == 0)
 	{
 		put_char('0');
 		counter++;
 		return (counter);
 	}
+	if (num < 0)
+	{
+		put_char('-');
+		counter++;
+		n = (unsigned int)-num;
+	}
 	if (num == INT_MIN)
 	{
-		put_char('2');
-		num = 147483648;
+		counter += put_d(n / 10);
+		put_char((n % 10) + '0');
 		counter++;
+		return (counter);
+	
 	}
 	new_num = num / 10;
 	if (new_num != 0)
